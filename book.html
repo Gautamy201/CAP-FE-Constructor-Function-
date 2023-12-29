@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+// Constructor function for Author
+function Author(name, birthYear, nationality) {
+    this.name = name;
+    this.birthYear = birthYear;
+    this.nationality = nationality;
+}
+
+// Constructor function for Book
+function Book(title, author, genre, price) {
+    this.title = title;
+    this.author = author;
+    this.genre = genre;
+    this.price = price;
+}
+
+// Add a method to the Book prototype
+Book.prototype.getBookInfo = function () {
+    console.log(`
+        Title: ${this.title}
+        Author: ${this.author.name}
+        Genre: ${this.genre}
+        Price: ₹${this.price}
+    `);
+};
+
+// Create instances of Author and Book
+const author1 = new Author("demo1", 2012, "indian");
+const author2 = new Author("demo2", 2015, "indian");
+
+const book1 = new Book("book demo1", author1, "comedy", 200);
+const book2 = new Book("book demo2", author2, "horrer", 300);
+
+// Display book details
+book1.getBookInfo();
+console.log("---------------------");
+book2.getBookInfo();
+</script>
+</html>
